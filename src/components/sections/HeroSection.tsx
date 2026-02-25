@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const rotatingWords = [
-  'Web Solutions',
-  'MVPs',
-  'AI Solutions',
-  'Digital Products',
-  'SaaS Platforms',
+  'React',
+  'Next.js',
+  'TypeScript',
+  'SaaS',
+  'Web Apps',
 ];
 
 export function HeroSection() {
@@ -35,7 +35,7 @@ export function HeroSection() {
           >
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-muted-foreground">
-              Available for new projects
+              Senior Frontend Engineer · Available for opportunities
             </span>
           </motion.div>
 
@@ -46,7 +46,7 @@ export function HeroSection() {
             className="space-y-6 mb-8"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-[1.1] tracking-tight">
-              <span className="text-foreground block">We build</span>
+              <span className="text-foreground block">Hi, I&apos;m Hamza</span>
               <div className="h-[1.2em] overflow-hidden relative flex items-center justify-center">
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -62,17 +62,17 @@ export function HeroSection() {
                 </AnimatePresence>
               </div>
               <span className="text-foreground block">
-                that drive{' '}
+                engineer building{' '}
                 <span className="inline transition-colors group-hover:text-primary">
-                  results
+                  scalable products
                 </span>
               </span>
             </h1>
 
             <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-              Specializing in web solutions, MVPs, and AI-powered applications.
-              We transform ambitious ideas into scalable digital products that
-              perform flawlessly and drive business growth.
+              5+ years building SaaS platforms, MVPs, and data-intensive web
+              applications. React, Next.js, TypeScript & Tailwind. I ship
+              production-ready products and love clean architecture.
             </p>
           </motion.div>
 
@@ -87,18 +87,17 @@ export function HeroSection() {
                 href="/contact"
                 className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all inline-flex items-center justify-center gap-2"
               >
-                Start a Project
+                Say Hi · Start a conversation
                 <span className="text-xl">→</span>
               </a>
               <a
                 href="#work"
                 className="px-8 py-4 border border-border text-foreground font-semibold rounded-lg hover:bg-card transition-all inline-flex items-center justify-center gap-2"
               >
-                View Our Work
+                View my work
               </a>
             </div>
 
-            {/* Feature Pills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -106,13 +105,13 @@ export function HeroSection() {
               className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4"
             >
               <span className="px-4 py-2 bg-secondary border border-primary/30 rounded-full text-sm text-foreground shadow-[0_0_15px_rgba(79,142,247,0.3)] hover:shadow-[0_0_20px_rgba(79,142,247,0.5)] hover:border-primary/50 transition-all">
-                Lightning Fast
+                React · Next.js
               </span>
               <span className="px-4 py-2 bg-secondary border border-primary/30 rounded-full text-sm text-foreground shadow-[0_0_15px_rgba(79,142,247,0.3)] hover:shadow-[0_0_20px_rgba(79,142,247,0.5)] hover:border-primary/50 transition-all">
-                Pixel Perfect
+                TypeScript
               </span>
               <span className="px-4 py-2 bg-secondary border border-primary/30 rounded-full text-sm text-foreground shadow-[0_0_15px_rgba(79,142,247,0.3)] hover:shadow-[0_0_20px_rgba(79,142,247,0.5)] hover:border-primary/50 transition-all">
-                AI-Powered
+                Tailwind · Supabase
               </span>
             </motion.div>
           </motion.div>
@@ -125,27 +124,19 @@ export function HeroSection() {
           className="mt-24 sm:mt-32 pt-12 sm:pt-16 border-t border-border"
         >
           <p className="text-muted-foreground text-xs sm:text-sm uppercase tracking-[0.2em] mb-6 sm:mb-8 text-center">
-            Trusted By Industry Leaders
+            Experience at
           </p>
-          <div className="flex items-center justify-center gap-8 sm:gap-16 flex-wrap opacity-40 grayscale">
-            {[
-              'DigitalFlow',
-              'Tido',
-              'SHAPE',
-              'TechCorp',
-              'NextGen',
-              'NoodleFactory',
-              'Dapster',
-              'DataPro',
-              'DP World',
-            ].map((company) => (
-              <div
-                key={company}
-                className="text-foreground font-bold text-lg sm:text-xl"
-              >
-                {company}
-              </div>
-            ))}
+          <div className="flex items-center justify-center gap-8 sm:gap-16 flex-wrap opacity-60">
+            {['Sondr', 'Circlone', 'SHAPE', 'Aerodyne', 'DP World'].map(
+              (company) => (
+                <div
+                  key={company}
+                  className="text-foreground font-semibold text-base sm:text-lg"
+                >
+                  {company}
+                </div>
+              )
+            )}
           </div>
         </motion.div>
       </div>

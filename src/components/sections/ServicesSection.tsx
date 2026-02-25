@@ -36,7 +36,7 @@ export function ServicesSection() {
               viewport={{ once: true }}
               className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4"
             >
-              Our Solutions
+              What I do
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -45,14 +45,9 @@ export function ServicesSection() {
               transition={{ duration: 1.2, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground"
             >
-              Transforming{' '}
+              Services{' '}
               <span className="transition-colors group-hover:text-primary">
-                ideas
-              </span>{' '}
-              <br className="hidden sm:block" />
-              into{' '}
-              <span className="transition-colors group-hover:text-primary">
-                reality
+                I offer
               </span>
             </motion.h2>
           </div>

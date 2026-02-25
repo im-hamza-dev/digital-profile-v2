@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-const THEME_STORAGE_KEY = 'scrumstack-theme';
+const THEME_STORAGE_KEY = 'hamza-theme';
 
 export type Theme = 'light' | 'dark';
 
@@ -21,14 +21,14 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark';
+  if (typeof window === 'undefined') return 'light';
   const stored = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
   if (stored === 'light' || stored === 'dark') return stored;
-  return 'dark';
+  return 'light';
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark');
+  const [theme, setThemeState] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

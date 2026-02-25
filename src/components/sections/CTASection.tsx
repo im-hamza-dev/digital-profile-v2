@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -21,7 +21,7 @@ export function CTASection() {
             viewport={{ once: true }}
             className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4"
           >
-            Get in Touch
+            Keep in touch with me
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -30,12 +30,9 @@ export function CTASection() {
             transition={{ duration: 1.2, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8"
           >
-            Let&apos;s create{' '}
+            Say Hi.{' '}
             <span className="transition-colors group-hover:text-primary">
-              something
-            </span>{' '}
-            <span className="transition-colors group-hover:text-primary">
-              amazing
+              Start a conversation
             </span>
           </motion.h2>
           <motion.p
@@ -45,8 +42,8 @@ export function CTASection() {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="text-muted-foreground text-lg sm:text-xl mb-10 sm:mb-12 leading-relaxed"
           >
-            Have a project in mind? Send a message or book a call — we&apos;ll
-            get back to you soon.
+            Have a project in mind or just want to connect? Book a call or drop
+            me an email. I&apos;d love to hear from you.
           </motion.p>
 
           <motion.div
@@ -54,18 +51,10 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4"
           >
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
-            >
-              Get in Touch
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
               href="/contact#calendly"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border text-foreground font-semibold rounded-lg hover:bg-card hover:border-primary/50 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
             >
               <Calendar className="w-5 h-5" />
               Book a call

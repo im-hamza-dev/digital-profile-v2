@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ContactSection } from '@/components/sections/ContactSection';
 
 export const metadata: Metadata = {
-  title: 'Contact – ScrumStack Solutions',
+  title: 'Contact – Hamza Iqbal',
   description:
-    "Get in touch. Let's create something amazing together. Have a project in mind? We can help bring your vision to life.",
+    "Get in touch. Book a call or say hi. I'd love to hear from you.",
 };
 
 export default function ContactPage() {

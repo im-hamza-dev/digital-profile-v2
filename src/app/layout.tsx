@@ -12,16 +12,16 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://scrum-stack.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hamzaiqbal.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ScrumStack Solutions – We build experiences',
-    template: '%s | ScrumStack Solutions',
+    default: 'Hamza Iqbal – Senior Frontend Engineer',
+    template: '%s | Hamza Iqbal',
   },
   description:
-    'A digital studio specializing in transforming ambitious ideas into exceptional products through design, technology, and innovation.',
+    'Senior Frontend Engineer building scalable SaaS, MVPs, and web applications with React, Next.js, TypeScript & Tailwind.',
   icons: {
     icon: '/favicon.png',
     apple: '/apple-icon.png',
@@ -29,24 +29,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'ScrumStack Solutions',
-    title: 'ScrumStack Solutions – We build experiences',
+    siteName: 'Hamza Iqbal',
+    title: 'Hamza Iqbal – Senior Frontend Engineer',
     description:
-      'A digital studio specializing in transforming ambitious ideas into exceptional products through design, technology, and innovation.',
+      'Senior Frontend Engineer building scalable SaaS, MVPs, and web applications with React, Next.js, TypeScript & Tailwind.',
     images: [
       {
         url: '/favicon.png',
         width: 512,
         height: 512,
-        alt: 'ScrumStack Solutions',
+        alt: 'Hamza Iqbal',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ScrumStack Solutions – We build experiences',
+    title: 'Hamza Iqbal – Senior Frontend Engineer',
     description:
-      'A digital studio specializing in transforming ambitious ideas into exceptional products through design, technology, and innovation.',
+      'Senior Frontend Engineer building scalable SaaS, MVPs, and web applications with React, Next.js, TypeScript & Tailwind.',
     images: ['/favicon.png'],
   },
   robots: {
@@ -71,7 +71,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('scrumstack-theme');document.documentElement.setAttribute('data-theme',t==='light'?t:'dark');})();`,
+            __html: `(function(){var t=localStorage.getItem('hamza-theme');document.documentElement.setAttribute('data-theme',t==='dark'?t:'light');})();`,
           }}
         />
       </head>

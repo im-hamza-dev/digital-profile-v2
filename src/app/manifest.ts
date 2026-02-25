@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'ScrumStack Solutions – We build experiences',
-    short_name: 'ScrumStack',
+    name: 'Hamza Iqbal – Senior Frontend Engineer',
+    short_name: 'Hamza Iqbal',
     description:
-      'A digital studio specializing in transforming ambitious ideas into exceptional products through design, technology, and innovation.',
+      'Senior Frontend Engineer building scalable SaaS, MVPs, and web applications with React, Next.js, TypeScript & Tailwind.',
     start_url: '/',
     display: 'standalone',
     background_color: '#292826',

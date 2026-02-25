@@ -21,8 +21,7 @@ export function Navigation() {
   const navLinks = [
     { href: '#work', label: 'Work' },
     { href: '#services', label: 'Services' },
-    { href: '#pricing', label: 'Pricing' },
-    { href: '#process', label: 'Process' },
+    { href: '#experience', label: 'Experience' },
   ];
 
   return (
@@ -42,17 +41,17 @@ export function Navigation() {
           <Link
             href="/"
             className="flex items-center gap-3 px-3 py-2 -ml-3 rounded-lg hover:bg-card transition-colors shrink-0"
-            aria-label="ScrumStack Solutions Home"
+            aria-label="Hamza Iqbal Home"
           >
             <Image
               src="/favicon.png"
-              alt="ScrumStack Solutions"
+              alt="Hamza Iqbal"
               width={56}
               height={56}
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-[20px] object-cover shrink-0"
             />
             <span className="text-foreground font-bold text-xl sm:text-2xl tracking-tight hidden sm:block">
-              ScrumStack Solutions
+              Hamza Iqbal
             </span>
           </Link>
 
@@ -72,7 +71,7 @@ export function Navigation() {
             <div className="hidden lg:flex items-center gap-2">
               <ThemeSwitcher />
               <a
-                href="https://www.linkedin.com/company/106638005"
+                href="https://linkedin.com/in/iamhamzaiqbal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-lg text-muted-foreground hover:text-primary transition-colors"
@@ -85,7 +84,7 @@ export function Navigation() {
               href="/contact"
               className="hidden sm:inline-flex px-4 sm:px-6 py-2.5 border border-primary text-primary rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              Get in Touch
+              Contact
             </a>
             <button
               type="button"

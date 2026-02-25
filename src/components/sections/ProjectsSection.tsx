@@ -148,7 +148,7 @@ export function ProjectsSection() {
               viewport={{ once: true }}
               className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4"
             >
-              Featured Projects
+              Featured work
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -157,9 +157,9 @@ export function ProjectsSection() {
               transition={{ duration: 1.2, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground"
             >
-              How we helped <br className="hidden sm:block" /> others{" "}
+              Projects I&apos;ve <br className="hidden sm:block" /> worked on{" "}
               <span className="transition-colors group-hover/section:text-primary">
-                succeed
+                .
               </span>
             </motion.h2>
           </div>

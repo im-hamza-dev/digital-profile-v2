@@ -123,7 +123,7 @@ export function TestimonialsSection() {
             viewport={{ once: true }}
             className="text-muted-foreground text-xs uppercase tracking-[0.2em] mb-4"
           >
-            Stories of Success
+            Testimonials
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -132,9 +132,9 @@ export function TestimonialsSection() {
             transition={{ duration: 1.2, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground"
           >
-            Hear from <br className="hidden sm:block" /> our{' '}
+            What people say <br className="hidden sm:block" /> about{' '}
             <span className="transition-colors group-hover:text-primary">
-              clients
+              working with me
             </span>
           </motion.h2>
         </div>
