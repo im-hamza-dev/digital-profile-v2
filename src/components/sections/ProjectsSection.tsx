@@ -44,7 +44,7 @@ function ProjectCard({
         <h3 className="text-foreground text-lg sm:text-xl font-bold mb-2 transition-colors group-hover/card:text-primary">
           {project.name}
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 group-hover/card:line-clamp-none mb-4">
+        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">
           {project.description}
         </p>
         <div className="flex items-center gap-2 text-primary font-semibold text-sm opacity-0 translate-y-3 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out">
