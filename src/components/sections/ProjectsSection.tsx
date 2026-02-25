@@ -22,7 +22,7 @@ function ProjectCard({
     <Link
       href={`/work/${project.id}`}
       onClick={onLinkClick}
-      className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border hover:border-primary/30 transition-all duration-300 ease-out h-full flex-shrink-0 w-[380px] hover:w-[494px] hover:z-10 hover:shadow-xl"
+      className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border transition-all duration-300 ease-out h-full flex-shrink-0 w-[380px] hover:w-[494px] hover:z-10 hover:shadow-xl"
     >
       <div
         className="aspect-[4/3] relative overflow-hidden bg-secondary select-none"
@@ -37,14 +37,14 @@ function ProjectCard({
           className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
       </div>
-      <div className="p-5 sm:p-6">
-        <span className="inline-block px-3 py-1 bg-card text-primary text-xs font-semibold rounded-full border border-border mb-3">
+      <div className="p-5 sm:p-6 bg-white/60 dark:bg-white/5 backdrop-blur-xl border-t border-white/20 dark:border-white/5 shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.08)] dark:shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.3)]">
+        <span className="inline-block px-3 py-1 bg-white/40 dark:bg-white/10 backdrop-blur-sm text-primary text-xs font-semibold rounded-full border border-white/30 dark:border-white/10 mb-3">
           {project.industry}
         </span>
         <h3 className="text-foreground text-lg sm:text-xl font-bold mb-2 transition-colors group-hover/card:text-primary">
           {project.name}
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 group-hover/card:line-clamp-none mb-4">
           {project.description}
         </p>
         <div className="flex items-center gap-2 text-primary font-semibold text-sm opacity-0 translate-y-3 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out">
@@ -178,7 +178,7 @@ export function ProjectsSection() {
 
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto overflow-y-hidden gap-4 scrollbar-hide -mx-6 sm:-mx-8 lg:-mx-16 px-6 sm:px-8 lg:px-16 touch-pan-x"
+        className="flex overflow-x-auto overflow-y-hidden gap-4 scrollbar-hide -mx-6 sm:-mx-8 lg:-mx-16 px-6 sm:px-8 lg:px-16 pb-8 touch-pan-x"
         style={{ scrollBehavior: "auto" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
