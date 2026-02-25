@@ -43,15 +43,15 @@ export function Navigation() {
             className="flex items-center gap-3 px-3 py-2 -ml-3 rounded-lg hover:bg-card transition-colors shrink-0"
             aria-label="Hamza Iqbal Home"
           >
-            <Image
+            {/* <Image
               src="/favicon.png"
               alt="Hamza Iqbal"
               width={56}
               height={56}
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-[20px] object-cover shrink-0"
-            />
-            <span className="text-foreground font-bold text-xl sm:text-2xl tracking-tight hidden sm:block">
-              Hamza Iqbal
+            /> */}
+            <span className="text-foreground font-bold text-1xl sm:text-5xl tracking-tight hidden sm:block">
+              Hamza .
             </span>
           </Link>
 

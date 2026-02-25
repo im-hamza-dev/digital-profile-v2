@@ -22,8 +22,7 @@ function ProjectCard({
     <Link
       href={`/work/${project.id}`}
       onClick={onLinkClick}
-      className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border hover:border-primary/30 transition-all h-full flex-shrink-0"
-      style={{ width: CARD_WIDTH }}
+      className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border hover:border-primary/30 transition-all duration-300 ease-out h-full flex-shrink-0 w-[380px] hover:w-[494px] hover:z-10 hover:shadow-xl"
     >
       <div
         className="aspect-[4/3] relative overflow-hidden bg-secondary select-none"
