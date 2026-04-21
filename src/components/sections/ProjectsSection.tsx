@@ -18,7 +18,7 @@ function ProjectCard({
     <Link
       href={`/work/${project.id}`}
       onClick={onLinkClick}
-      className="group/card relative overflow-hidden rounded-2xl bg-secondary border border-border transition-shadow duration-300 ease-out flex flex-col flex-shrink-0 w-[380px] h-[490px] hover:z-10 hover:shadow-xl"
+      className="group/card relative overflow-hidden rounded-2xl bg-secondary border border-border transition-[transform] duration-300 ease-out flex flex-col flex-shrink-0 w-[380px] h-[490px] hover:z-10"
     >
       <div
         className="h-[285px] group-hover/card:h-[150px] transition-[height] duration-300 ease-out relative overflow-hidden bg-secondary select-none"
