@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { projects } from "@/lib/projects";
-import { useRef, useEffect, useCallback } from "react";
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { projects } from '@/lib/projects';
+import { useRef, useEffect, useCallback } from 'react';
 
 function ProjectCard({
   project,
@@ -18,10 +18,10 @@ function ProjectCard({
     <Link
       href={`/work/${project.id}`}
       onClick={onLinkClick}
-      className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border transition-all duration-300 ease-out h-full flex-shrink-0 w-[380px] hover:w-[494px] hover:z-10 hover:shadow-xl"
+      className="group/card relative overflow-hidden rounded-2xl bg-secondary border border-border transition-shadow duration-300 ease-out flex flex-col flex-shrink-0 w-[380px] h-[490px] hover:z-10 hover:shadow-xl"
     >
       <div
-        className="h-[285px] relative overflow-hidden bg-secondary select-none"
+        className="h-[285px] group-hover/card:h-[150px] transition-[height] duration-300 ease-out relative overflow-hidden bg-secondary select-none"
         onDragStart={(e) => e.preventDefault()}
       >
         <Image
@@ -33,14 +33,14 @@ function ProjectCard({
           className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
       </div>
-      <div className="p-5 sm:p-6 bg-white/60 dark:bg-white/5 backdrop-blur-xl border-t border-white/20 dark:border-white/5 shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.08)] dark:shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.3)]">
+      <div className="flex-1 p-5 sm:p-6 bg-white/60 dark:bg-white/5 backdrop-blur-xl border-t border-white/20 dark:border-white/5 shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.08)] dark:shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.3)] transition-[padding] duration-300 ease-out">
         <span className="inline-block px-3 py-1 bg-white/40 dark:bg-white/10 backdrop-blur-sm text-primary text-xs font-semibold rounded-full border border-white/30 dark:border-white/10 mb-3">
           {project.industry}
         </span>
         <h3 className="text-foreground text-lg sm:text-xl font-bold mb-2 transition-colors group-hover/card:text-primary">
           {project.name}
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-muted-foreground text-sm leading-relaxed overflow-hidden max-h-[2.8rem] group-hover/card:max-h-[11.2rem] mb-4 transition-[max-height] duration-300 ease-out">
           {project.description}
         </p>
         <div className="flex items-center gap-2 text-primary font-semibold text-sm opacity-0 translate-y-3 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out">
@@ -52,7 +52,7 @@ function ProjectCard({
   );
 }
 
-const SWIPEABLE_MEDIA = "(max-width: 1024px)";
+const SWIPEABLE_MEDIA = '(max-width: 1024px)';
 
 export function ProjectsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -63,14 +63,15 @@ export function ProjectsSection() {
   const isSwipeableRef = useRef(false);
 
   useEffect(() => {
-    const mq = typeof window !== "undefined" ? window.matchMedia(SWIPEABLE_MEDIA) : null;
+    const mq =
+      typeof window !== 'undefined' ? window.matchMedia(SWIPEABLE_MEDIA) : null;
     if (!mq) return;
     const update = () => {
       isSwipeableRef.current = mq.matches;
     };
     update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
   }, []);
 
   const handleLinkClick = useCallback((e: React.MouseEvent) => {
@@ -109,7 +110,10 @@ export function ProjectsSection() {
   const duplicated = [...projects, ...projects];
 
   return (
-    <section id="work" className="group/section py-16 sm:py-20 lg:py-[7.5rem] relative">
+    <section
+      id="work"
+      className="group/section py-16 sm:py-20 lg:py-[7.5rem] relative"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/50 to-transparent pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-16 relative">
@@ -130,7 +134,7 @@ export function ProjectsSection() {
               transition={{ duration: 1.2, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground"
             >
-              Projects I&apos;ve <br className="hidden sm:block" /> worked on{" "}
+              Projects I&apos;ve <br className="hidden sm:block" /> worked on{' '}
               <span className="transition-colors group-hover/section:text-primary">
                 .
               </span>
@@ -153,7 +157,7 @@ export function ProjectsSection() {
       <div
         ref={scrollRef}
         className="flex overflow-x-auto overflow-y-hidden gap-4 scrollbar-hide -mx-6 sm:-mx-8 lg:-mx-16 px-6 sm:px-8 lg:px-16 pb-8 touch-pan-x"
-        style={{ scrollBehavior: "auto" }}
+        style={{ scrollBehavior: 'auto' }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
