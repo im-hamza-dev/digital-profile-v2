@@ -7,10 +7,6 @@ import { ArrowRight } from "lucide-react";
 import { projects } from "@/lib/projects";
 import { useRef, useEffect, useCallback } from "react";
 
-const CARD_WIDTH = 380;
-const CARD_GAP = 16;
-const SCROLL_SPEED = 0.5;
-
 function ProjectCard({
   project,
   onLinkClick,
@@ -25,7 +21,7 @@ function ProjectCard({
       className="group/card block relative overflow-hidden rounded-2xl bg-secondary border border-border transition-all duration-300 ease-out h-full flex-shrink-0 w-[380px] hover:w-[494px] hover:z-10 hover:shadow-xl"
     >
       <div
-        className="aspect-[4/3] relative overflow-hidden bg-secondary select-none"
+        className="h-[285px] relative overflow-hidden bg-secondary select-none"
         onDragStart={(e) => e.preventDefault()}
       >
         <Image
@@ -64,7 +60,6 @@ export function ProjectsSection() {
   const startXRef = useRef(0);
   const startScrollRef = useRef(0);
   const isDraggingRef = useRef(false);
-  const rafRef = useRef<number>(0);
   const isSwipeableRef = useRef(false);
 
   useEffect(() => {
@@ -83,27 +78,6 @@ export function ProjectsSection() {
       e.preventDefault();
       e.stopPropagation();
     }
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const autoScroll = () => {
-      if (!el || isDraggingRef.current) {
-        rafRef.current = requestAnimationFrame(autoScroll);
-        return;
-      }
-      const half = el.scrollWidth / 2;
-      el.scrollLeft += SCROLL_SPEED;
-      if (el.scrollLeft >= half) {
-        el.scrollLeft -= half;
-      }
-      rafRef.current = requestAnimationFrame(autoScroll);
-    };
-
-    rafRef.current = requestAnimationFrame(autoScroll);
-    return () => cancelAnimationFrame(rafRef.current);
   }, []);
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
