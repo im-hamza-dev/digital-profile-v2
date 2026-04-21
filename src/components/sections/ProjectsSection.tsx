@@ -29,12 +29,14 @@ function ProjectCard({
           alt={project.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+          quality={70}
           draggable={false}
-          className="object-cover transition-transform duration-500 group-hover/card:scale-105"
+          className="object-cover transition-transform duration-500 group-hover/card:scale-105 will-change-transform"
         />
       </div>
-      <div className="flex-1 p-5 sm:p-6 bg-white/60 dark:bg-white/5 backdrop-blur-xl border-t border-white/20 dark:border-white/5 shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.08)] dark:shadow-[0_-4px_24px_-4px_rgba(0,0,0,0.3)] transition-[padding] duration-300 ease-out">
-        <span className="inline-block px-3 py-1 bg-white/40 dark:bg-white/10 backdrop-blur-sm text-primary text-xs font-semibold rounded-full border border-white/30 dark:border-white/10 mb-3">
+      <div className="flex-1 p-5 sm:p-6 bg-background/95 dark:bg-background/60 border-t border-border transition-[padding] duration-300 ease-out">
+        <span className="inline-block px-3 py-1 bg-secondary text-primary text-xs font-semibold rounded-full border border-border mb-3">
           {project.industry}
         </span>
         <h3 className="text-foreground text-lg sm:text-xl font-bold mb-2 transition-colors group-hover/card:text-primary">
@@ -94,11 +96,7 @@ export function ProjectsSection() {
     if (!isDraggingRef.current || !scrollRef.current) return;
     const dx = e.clientX - startXRef.current;
     if (Math.abs(dx) > 12) didSwipeRef.current = true;
-    const half = scrollRef.current.scrollWidth / 2;
-    let next = startScrollRef.current - dx;
-    while (next < 0) next += half;
-    while (next >= half) next -= half;
-    scrollRef.current.scrollLeft = next;
+    scrollRef.current.scrollLeft = startScrollRef.current - dx;
   }, []);
 
   const onPointerUp = useCallback((e: React.PointerEvent) => {
@@ -106,8 +104,6 @@ export function ProjectsSection() {
     isDraggingRef.current = false;
     startScrollRef.current = scrollRef.current?.scrollLeft ?? 0;
   }, []);
-
-  const duplicated = [...projects, ...projects];
 
   return (
     <section
@@ -156,7 +152,7 @@ export function ProjectsSection() {
 
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto overflow-y-hidden gap-4 scrollbar-hide -mx-6 sm:-mx-8 lg:-mx-16 px-6 sm:px-8 lg:px-16 pb-8 touch-pan-x"
+        className="flex overflow-x-auto overflow-y-hidden gap-4 scrollbar-hide -mx-6 sm:-mx-8 lg:-mx-16 px-6 sm:px-8 lg:px-16 pb-8 touch-pan-x "
         style={{ scrollBehavior: 'auto' }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -168,9 +164,9 @@ export function ProjectsSection() {
           }
         }}
       >
-        {duplicated.map((project, i) => (
+        {projects.map((project) => (
           <ProjectCard
-            key={`${project.id}-${i}`}
+            key={project.id}
             project={project}
             onLinkClick={handleLinkClick}
           />
