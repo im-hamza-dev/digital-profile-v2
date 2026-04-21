@@ -3,13 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const rotatingWords = [
-  'React',
-  'Next.js',
-  'TypeScript',
-  'SaaS',
-  'Web Apps',
-];
+const rotatingWords = ['React', 'Next.js', 'TypeScript', 'SaaS', 'Web Apps'];
 
 export function HeroSection() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -35,7 +29,7 @@ export function HeroSection() {
           >
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-muted-foreground">
-              Senior Frontend Engineer · Available for opportunities
+              Senior Product Engineer · Available for opportunities
             </span>
           </motion.div>
 
@@ -135,7 +129,7 @@ export function HeroSection() {
                 >
                   {company}
                 </div>
-              )
+              ),
             )}
           </div>
         </motion.div>
